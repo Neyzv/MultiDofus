@@ -1,0 +1,66 @@
+﻿<Window x:Class="MultiDofus.OptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:MultiDofus.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:OptionViewModel}"
+        mc:Ignorable="d"
+        Title="OptionWindow" AllowsTransparency="True" Height="320" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="Transparent">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="8"/>
+    </WindowChrome.WindowChrome>
+
+    <Border Background="#99000000" BorderThickness="1" CornerRadius="5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" BorderThickness="0 0 0 2" BorderBrush="#991DDBFF">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Margin="40 0 0 0" FontSize="14" Text="Options" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Button Grid.Column="1" Command="{Binding CloseCommand}" Style="{StaticResource ButtonStyle}">
+                        <Path Width="12" StrokeThickness="1.5" Stretch="Uniform" StrokeLineJoin="Round" StrokeEndLineCap="Round" StrokeStartLineCap="Round" Stroke="White" Data="M6 18L18 6M6 6l12 12"/>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <TextBlock Margin="10 0 0 5" FontSize="14" Grid.Row="3" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="Pour déplacer tous vos personnages utilisez le click molette de la souris" Foreground="White"/>
+
+            <Grid Margin="5 0 5 0" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Margin="0 -14 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0">
+                    <TextBlock Margin="0 0 0 5" FontSize="14" Text="Fenêtre suivante :" Foreground="White" VerticalAlignment="Center"/>
+                    <ComboBox Name="NextWindowKeys" HorizontalAlignment="Left" Style="{StaticResource ComboBoxStyle}">
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Margin="0 -14 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
+                    <TextBlock Margin="0 0 0 5" FontSize="14" Text="Fenêtre précédente :" Foreground="White" VerticalAlignment="Center"/>
+                    <ComboBox Name="PreviousWindowKeys" HorizontalAlignment="Left" Style="{StaticResource ComboBoxStyle}">
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+            <StackPanel HorizontalAlignment="Center" Grid.Row="2">
+                <TextBlock Margin="0 0 0 5" FontSize="14" Text="Temps mort click en milliseconde (30 - 3000) :" Foreground="White" VerticalAlignment="Center"/>
+                <TextBox Width="120" Name="DeathTimeClick"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Grid.Row="3">
+                <TextBlock Margin="0 0 0 5" FontSize="14" Text="Temps mort swap fenêtre en milliseconde (30 - 3000) :" Foreground="White" VerticalAlignment="Center"/>
+                <TextBox Width="120" Name="DeathTimeSwap"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
