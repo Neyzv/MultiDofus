@@ -8,7 +8,7 @@ namespace MultiDofus
 
         public static Win32API.VirtualKeys PreviousWindowKey { get; set; } = Win32API.VirtualKeys.Multiply;
 
-        public static int DeathTimeSwap { get; set; } = 100;
+        public static int DeathTimeSwap { get; set; } = 200;
 
         public static int DeathTimeClick { get; set; } = 80;
     }
