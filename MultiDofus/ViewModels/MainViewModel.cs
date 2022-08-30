@@ -181,6 +181,7 @@ namespace MultiDofus.ViewModels
                     dofusProcess.Panel.Visible = true;
 
                     Win32API.SetForegroundWindow(dofusProcess.Process.MainWindowHandle);
+                    Win32API.SetFocus(dofusProcess.Process.MainWindowHandle);
                 }
                 else
                     dofusProcess.Panel.Visible = false;
