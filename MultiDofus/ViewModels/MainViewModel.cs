@@ -182,6 +182,7 @@ namespace MultiDofus.ViewModels
 
                     Win32API.SetForegroundWindow(dofusProcess.Process.MainWindowHandle);
                     Win32API.SetFocus(dofusProcess.Process.MainWindowHandle);
+
                 }
                 else
                     dofusProcess.Panel.Visible = false;
@@ -251,7 +252,6 @@ namespace MultiDofus.ViewModels
                     _runningDofusProcesses.Add(dofusProcess);
 
                     Resize(dofusProcess);
-                    SetFocus(process.Id);
                 }
             }
         }
