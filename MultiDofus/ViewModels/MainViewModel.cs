@@ -252,6 +252,7 @@ namespace MultiDofus.ViewModels
                     _runningDofusProcesses.Add(dofusProcess);
 
                     Resize(dofusProcess);
+                    SetFocus(process.Id);
                 }
             }
         }
